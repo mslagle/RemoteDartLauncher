@@ -8,6 +8,7 @@ namespace RemoteDart.Models
     public static class Cache
     {
         public static DartStatus Status { get; set; }
+        public static DateTime LastConnection { get; set; }
     }
 
     public enum DartStatus

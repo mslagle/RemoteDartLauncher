@@ -36,6 +36,8 @@ namespace RemoteDart.Controllers
 
         public IActionResult LaunchDart()
         {
+            Cache.LastConnection = DateTime.Now;
+
             if (Cache.Status == DartStatus.Pending)
             {
                 Cache.Status = DartStatus.Fired;
