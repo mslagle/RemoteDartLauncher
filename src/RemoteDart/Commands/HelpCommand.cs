@@ -10,7 +10,7 @@ namespace RemoteDart.Commands
     {
         public string GetDescription()
         {
-            return "Shows all available help commands";
+            return "Shows all available commands";
         }
 
         public string Run(string[] args)
