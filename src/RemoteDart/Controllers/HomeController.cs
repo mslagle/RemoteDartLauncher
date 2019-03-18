@@ -41,10 +41,10 @@ namespace RemoteDart.Controllers
             if (Cache.Status == DartStatus.Pending)
             {
                 Cache.Status = DartStatus.Fired;
-                return Ok();
+                return Ok("f");
             }
 
-            return BadRequest();
+            return Ok("n");
         }
     }
 

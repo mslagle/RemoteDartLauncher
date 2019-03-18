@@ -34,7 +34,7 @@ namespace RemoteDart.Commands
             }
             else
             {
-                sb.AppendLine($"Remote dart system is offline.  Last system connection was {Cache.LastConnection.ToShortTimeString()}.");
+                sb.AppendLine($"Remote dart system is offline.  Last system connection was {Cache.LastConnection.ToLocalTime().ToString("hh:mm:ss tt")}.");
             }
 
             return sb.ToString();
