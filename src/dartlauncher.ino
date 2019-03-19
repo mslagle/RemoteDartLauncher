@@ -47,8 +47,10 @@ void loop()
 
     Serial.print("Http Code: ");
     Serial.println(httpCode);
+    Serial.print("Payload: ");
+    Serial.println(payload);
 
-    if (httpCode == 200)
+    if (httpCode == 200 && payload == "f")
     {
         Serial.println("Successful request, shooting dart");
         
