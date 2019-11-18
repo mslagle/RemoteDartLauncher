@@ -1,6 +1,8 @@
 #include <Servo.h>
 #include <ESP8266WiFi.h>
+#include <ESP8266WebServer.h>
 #include <ESP8266HTTPClient.h>
+#include <WiFiManager.h>  
 
 const int MAX_SERVO = 130;
 const int MIN_SERVO = 0;
@@ -8,10 +10,10 @@ const int MIN_SERVO = 0;
 const char WIFI_NAME[] = "";
 const char WIFI_PASSWORD[] = "";
 
-const char WEB_URL[] = "/Home/LaunchDart"; 
+const char WEB_URL[] = "Home/LaunchDart"; 
 
 Servo servo;
-HTTPClient http; 
+HTTPClient http;
 
 void setup() 
 {
@@ -24,18 +26,9 @@ void setup()
     Serial.begin(115200);
     Serial.println();
 
-    WiFi.begin(WIFI_NAME, WIFI_PASSWORD);
-
-    Serial.print("Connecting");
-    while (WiFi.status() != WL_CONNECTED)
-    {
-        delay(500);
-        Serial.print(".");
-    }
-    Serial.println();
-
-    Serial.print("Connected, IP address: ");
-    Serial.println(WiFi.localIP());
+	WiFiManager wifiManager;
+	wifiManager.autoConnect("RemoteDart");
+	Serial.println("Successful connection to wifi!");
 }
 
 void loop() 
